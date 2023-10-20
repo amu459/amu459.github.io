@@ -1,0 +1,57 @@
+﻿<Window x:Class="DeskAutomation.Classes.AskAngleOfRoom"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DeskAutomation.Classes"
+             mc:Ignorable="d" 
+             d:Height="auto" d:DesignWidth="400" ResizeMode="NoResize"
+             SizeToContent="WidthAndHeight" Title="Input Room Angle">
+    <Border Padding="15">
+
+        <StackPanel Width="350">
+
+            <Separator/>
+            <StackPanel Height="60">
+                <Label Content="Kindly input the selected room's angle :)" FontSize="20" Margin="0 0 0 5"
+                   HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="If you don't know > CANCEL > Measure room angle > Try Again " FontSize="12" Margin="0 0 0 5"
+                   HorizontalAlignment="Center"/>
+            </StackPanel>
+
+
+            <Label Content="> Never give up " FontSize="4" Margin="0 0 0 5"
+                   HorizontalAlignment="Right"/>
+            <!-- To Input the Casework Name -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Angle in degrees 🔥 = " FontSize="12" Margin="0 0 0 0" Grid.Column="0" HorizontalAlignment="Right" />
+                <TextBox x:Name="inputAngleText" Height="20" FontSize="10" Grid.Column="1" Margin="0,0,0,0"/>
+            </Grid>
+
+
+
+            <Separator/>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                <!-- Pack B and Cancel Buttons -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Spin" Width="100" Grid.Column="0" Click="GetAngleValue"/>
+                    <Button Content="Cancel" Width="100" Grid.Column="2" Click="CancelTask" Height="20" VerticalAlignment="Top"/>
+
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+
+
+
+    </Border>
+
+</Window>

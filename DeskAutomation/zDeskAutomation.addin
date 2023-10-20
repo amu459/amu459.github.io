@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name>Desk Automation Tool</Name>
+		<Assembly>DeskAutomation.dll</Assembly>
+		<AddInId>
+			1DD5B6AF-5119-4F7B-829C-2378F94DD658
+		</AddInId>
+		<FullClassName>DeskAutomation.ExternalApplication</FullClassName>
+		<VendorId>VDC</VendorId>
+		<VendorDescription>@VDC Team - Wework India Management Private Limited</VendorDescription>
+	</AddIn>
+</RevitAddIns>
