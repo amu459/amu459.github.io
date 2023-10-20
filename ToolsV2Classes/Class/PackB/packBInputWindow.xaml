@@ -1,0 +1,76 @@
+﻿<Window x:Class="ToolsV2Classes.Class.PackB.packBInputWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ToolsV2Classes.Class.PackB"
+             mc:Ignorable="d" 
+             d:Height="auto" d:DesignWidth="400" ResizeMode="NoResize"
+             SizeToContent="WidthAndHeight" Title="Input Casework Name">
+    <Border Padding="15">
+
+        <StackPanel Width="350">
+            <Grid>
+                <!-- To display Total Items Selected -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Total Casework/Furniture Selected =" FontSize="12" Margin="0 0 0 0" Grid.Column="0" 
+                       HorizontalAlignment="Right" />
+                <Label x:Name="label_Count" Margin="0,0,20,0" FontSize="14" Grid.Column="1"
+                       HorizontalAlignment="Left"/>
+            </Grid>
+            
+            
+            <Separator/>
+            <Label Content="Kindly input the casework name and select floor number :)" FontSize="12" Margin="0 0 0 5"
+                   HorizontalAlignment="Center"/>
+            <!-- To Input the Casework Name -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Casework Name = " FontSize="12" Margin="0 0 0 0" Grid.Column="0" HorizontalAlignment="Right" />
+                <TextBox x:Name="inputCaseworkText" Height="20" FontSize="10" Grid.Column="1" Margin="0,0,0,0" TextChanged="inputCaseworkText_TextChanged"/>
+            </Grid>
+
+
+            <!-- To Input the Floor number -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Floor Number = " FontSize="10" Margin="0 0 0 0" Grid.Column="0" HorizontalAlignment="Right" />
+                <ComboBox x:Name="exCombo" Height="20" FontSize="10" 
+                          Margin="0,0,0,0" Grid.Column="1"
+                          />
+
+            </Grid>
+
+
+
+
+            <Separator/>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                <!-- Pack B and Cancel Buttons -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Pack B Sheet" Width="100" Grid.Column="0" Click="GetPackBName"/>
+                    <Button Content="Cancel" Width="100" Grid.Column="2" Click="CancelTask"/>
+
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+
+
+
+    </Border>
+
+</Window>

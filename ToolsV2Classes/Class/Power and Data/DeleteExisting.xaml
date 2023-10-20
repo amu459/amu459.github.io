@@ -1,0 +1,22 @@
+﻿<Window x:Class="ToolsV2Classes.Class.Power_and_Data.DeleteExisting"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ToolsV2Classes.Class.Power_and_Data"
+             mc:Ignorable="d" Height="175" Width="425" Title="Delete Exisitng Grommets"
+             WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="10" Grid.RowSpan="2">
+            <TextBlock Foreground="Black" Margin="10,10,-10,5" FontSize="18" Height="32"><Run Text="Do you want to delete the existing Grommets?"/></TextBlock>
+            <Button x:Name="DeleteButton" Content="Yes, Delete" Height="35" Margin="0,20,275,0" RenderTransformOrigin="0.518,2.135" HorizontalAlignment="Right" Width="80" IsDefault="True" Click="Button_Click_1"/>
+            <Button x:Name="DoNotDeleteButton" Content="No" Height="35" Margin="0,-35,50,0" RenderTransformOrigin="0.518,2.135" HorizontalAlignment="Right" Width="80" Click="Button_Click"/>
+
+        </StackPanel>
+
+    </Grid>
+</Window>

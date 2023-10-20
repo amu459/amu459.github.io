@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name>ApplicationPlugin</Name>
+		<Assembly>ToolsV2Classes.dll</Assembly>
+		<AddInId>
+			74E29F33-9620-4B76-89A8-E5C854C9F9F1
+		</AddInId>
+		<FullClassName>ToolsV2Classes.ExternalApplication</FullClassName>
+		<VendorId>VDC</VendorId>
+		<VendorDescription>@VDC Team - Wework India Management Private Limited</VendorDescription>
+	</AddIn>
+</RevitAddIns>

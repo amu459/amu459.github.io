@@ -1,0 +1,24 @@
+﻿<Window x:Class="ToolsV2Classes.Class.ConceptBOQ.OutputUser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ToolsV2Classes.Class.ConceptBOQ"
+             mc:Ignorable="d" 
+             Title="Friendly Neighborhood Loading Screen"
+             Height="200" Width="600" WindowStartupLocation="Manual" ResizeMode="NoResize"
+             Top="200" Left="200">
+    <Grid Margin="50,0,0,0">
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Grid.ColumnSpan="2">
+            <TextBox HorizontalAlignment="Center" Height="100" Margin="0,50,0,50"   
+                 VerticalAlignment="Center" Width="500" 
+                 Name="LoadingBox" 
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center" 
+                 TextAlignment="Left" FontSize="14" TextChanged="LoadingBox_TextChanged_1"/>
+        </StackPanel>
+
+
+    </Grid>
+
+</Window>

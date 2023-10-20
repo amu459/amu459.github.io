@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB3997B6-BF25-4FDA-A720-E575075F889A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ToolsV2Classes</RootNamespace>
+    <AssemblyName>ToolsV2Classes</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>ToolsV2Classes.addin</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=6.2.6.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.7.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.7.0-develop00310\lib\net45\ExcelDataReader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.7.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.7.0-develop00310\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0-preview.4.23259.5\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPI">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\Autodesk\Revit 2019\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\Autodesk\Revit 2019\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0-preview.4.23259.5\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.0-preview.4.23259.5\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\Bulk BOQ Export\UI\UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
+    <None Include="Class\BOQExportImport\BoqItem.cs" />
+    <Compile Include="Class\BOQExportImport\BrowseExcel.xaml.cs">
+      <DependentUpon>BrowseExcel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Bulk BOQ Export\Model\FamilyCostInfoClass.cs" />
+    <Compile Include="Class\Bulk BOQ Export\Model\FamilyInstanceBOQClass.cs" />
+    <Compile Include="Class\Bulk BOQ Export\Model\Fields.cs" />
+    <Compile Include="Class\Bulk BOQ Export\Model\Record.cs" />
+    <Compile Include="Class\Bulk BOQ Export\Model\Root.cs" />
+    <Compile Include="Class\Bulk BOQ Export\Model\TaskDialogShowClass.cs" />
+    <Compile Include="Class\Bulk BOQ Export\Module\SyncAirTableQuickClass.cs" />
+    <Compile Include="Class\Bulk BOQ Export\Module\UIOperation.cs" />
+    <Compile Include="Class\Bulk BOQ Export\Module\UtilityClass.cs" />
+    <Compile Include="Class\ConceptBOQ\ConceptQTO.cs" />
+    <Compile Include="Class\ConceptBOQ\LineItem.cs" />
+    <Compile Include="Class\ConceptBOQ\OutputUser.xaml.cs">
+      <DependentUpon>OutputUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Ghosted Desk Workset\GhostedDeskWorkset.cs" />
+    <Compile Include="Class\Lighting Tool\DimensionLights.cs" />
+    <Compile Include="Class\Lighting Tool\HorizontalLights1200.cs" />
+    <Compile Include="Class\Lighting Tool\L00_H.cs" />
+    <Compile Include="Class\Lighting Tool\L00_V.cs" />
+    <Compile Include="Class\Lighting Tool\LoungeLights.cs" />
+    <Compile Include="Class\Lighting Tool\VerticalLights1200.cs" />
+    <Compile Include="Class\Lighting Tool\VerticalLights.cs" />
+    <Compile Include="Class\Lighting Tool\HorizontalLights.cs" />
+    <None Include="app.config" />
+    <None Include="Class\BOQExportImport\MEPBOQExport.cs" />
+    <None Include="Class\oldlogger.cs" />
+    <Compile Include="Class\PackB\packBInputWindow.xaml.cs">
+      <DependentUpon>packBInputWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Class\PackB\packBmethods.cs" />
+    <Compile Include="Class\PackB\packBSetup.cs" />
+    <Compile Include="Class\Power and Data\DeleteExisting.xaml.cs">
+      <DependentUpon>DeleteExisting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Power and Data\PowerAndData.cs" />
+    <None Include="Class\Not Compiled\WorkUnit.cs" />
+    <Compile Include="Class\ProgramRoomMass\RoomMassDelete.cs" />
+    <Compile Include="Class\ProgramRoomMass\RoomMassCommand.cs" />
+    <Compile Include="Class\ProgramRoomMass\Util.cs" />
+    <None Include="Class\Revit To Airtable\AirtableHelper.cs" />
+    <Compile Include="Class\Revit To Airtable\RevitToAT.cs" />
+    <Compile Include="Class\Room Separation Cleanup\RoomSeparation.cs" />
+    <Compile Include="ExternalApplication.cs" />
+    <Compile Include="Class\MEP Doc Generator\Generate.cs" />
+    <Compile Include="Class\MEP Doc Generator\GetLevelNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class\MEP Doc Generator\GetLevelNo.Designer.cs">
+      <DependentUpon>GetLevelNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Class\MEP Doc Generator\GetLevelNo.resx">
+      <DependentUpon>GetLevelNo.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="ToolsV2Classes.addin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\horizontalLights.png" />
+    <EmbeddedResource Include="logos\verticalLights.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\horizontalLightsToolTip.png" />
+    <EmbeddedResource Include="logos\verticalLightsToolTip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\powerNdata.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\pikachu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\powerNdataBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Class\BOQExportImport\BrowseExcel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Class\ConceptBOQ\OutputUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Class\PackB\packBInputWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Class\Power and Data\DeleteExisting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Class\Bulk BOQ Export\UI\UserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\createRoom.png" />
+    <EmbeddedResource Include="logos\deleteRoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\createRoomLarge.png" />
+    <EmbeddedResource Include="logos\deleteRoomLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\money32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\loading.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\loading100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\leo300.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\clean32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\clean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DeskAutomation\DeskAutomation.csproj">
+      <Project>{bb636288-3b14-4c38-b968-837037a44aef}</Project>
+      <Name>DeskAutomation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HelperClassLibrary\HelperClassLibrary.csproj">
+      <Project>{4dd36944-0e83-4b1b-b164-402e019be5f0}</Project>
+      <Name>HelperClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\dimLights.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\canLightsToolTip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\dimLights64.png" />
+    <EmbeddedResource Include="logos\horizontalLights64.png" />
+    <EmbeddedResource Include="logos\verticalLights64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\dimLights56.png" />
+    <EmbeddedResource Include="logos\horizontalLights56.png" />
+    <EmbeddedResource Include="logos\verticalLights56.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\canLight56.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\createRoom56.png" />
+    <EmbeddedResource Include="logos\deleteRoom56.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\wayfindingLogo64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\wayfindingLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\ghostBusters.png" />
+    <EmbeddedResource Include="logos\ghostBusters100.png" />
+    <EmbeddedResource Include="logos\ghostBusters32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\airtableBulkFurniture64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\airtableBulkFurniture100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\wayfindingLogo100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\airtableBulkFurniture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\packB32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="logos\packBOG250.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetDir)"."" "$(AppData)\Autodesk\Revit\Addins\2019\"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
