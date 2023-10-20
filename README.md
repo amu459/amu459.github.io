@@ -7,4 +7,7 @@ Anyways, I am uploading a deck which explains most of the tools I have created u
 
 Revit Automation Plugins info.pptx
 
+I do not know how copyright works yet. Will figure it out eventually.
+Hope nobody steals anything and uses it for wrong purposes. (This code dump is useless, mostly. SO I am not really worried)
+
 Thanks.
