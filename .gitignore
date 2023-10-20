@@ -1,0 +1,12 @@
+*.log
+*.key
+*.rvt
+*.cache
+*.pdb
+.vs/
+TestRevitFIles/
+IndiaTools/bin/
+IndiaTools/obj/
+IndiaTools/Secrets/
+IndiaTools/Secrets/api.key
+ToolsV2/ToolsV2Classes/ToolsV2Classes/obj/Debug
