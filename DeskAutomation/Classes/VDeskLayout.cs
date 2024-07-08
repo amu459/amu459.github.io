@@ -111,7 +111,7 @@ namespace DeskAutomation
                         }
 
                         bool widthAlgo = true;
-                        if (roomPD.RoomWidth < 9.5)
+                        if (roomPD.RoomWidth < 9.4370)
                         {
                             widthAlgo = false;
                         }
@@ -154,7 +154,7 @@ namespace DeskAutomation
                         int deskCount1R = 0;
 
                         bool widthAlgo = true;
-                        if ((roomPD.RoomWidth - 4.75) % 9.5 < 4.75)
+                        if ((roomPD.RoomWidth - 4.71850394) % 9.43700787 < 4.7185)
                         {
                             widthAlgo = false;
                         }

@@ -113,8 +113,11 @@ namespace DeskAutomation.Helper_Classes
         //Change desk offset to zero
         public static void ChangeOffsetToZero(FamilyInstance fi)
         {
-            Parameter deskOffset = fi.GetParameters("Offset").FirstOrDefault();
-            deskOffset.Set(0);
+            Parameter deskOffset = fi.GetParameters("Elevation from Level").FirstOrDefault() ?? fi.GetParameters("Offset").FirstOrDefault();
+            Parameter deskHostOffset = fi.GetParameters("Offset from Host").FirstOrDefault();
+
+            deskHostOffset?.Set(0);
+            deskOffset?.Set(0);
         }
 
         public static List<FamilyInstance> PlaceDesks

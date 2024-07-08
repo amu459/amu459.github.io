@@ -106,15 +106,15 @@ namespace DeskAutomation.Helper_Classes
                 //HelperMethods.PrintPoints(RightEdge, tFormRe);
 
 
-                if (RoomWidth < 14.25 && RoomWidth > 5.5)
+                if (RoomWidth < 14.15551 && RoomWidth > 5.5)
                 {
                     RoomType = "LeftRightSingle";
                 }
-                if (RoomWidth > 14.25 && RoomLength < 24.25)
+                if (RoomWidth > 14.15551 && RoomLength < 23.78608)
                 {
                     RoomType = "Double";
                 }
-                if (RoomWidth > 14.25 && RoomLength > 24.25)
+                if (RoomWidth > 14.15551 && RoomLength > 23.78608)
                 {
                     RoomType = "DoubleLarge";
                 }

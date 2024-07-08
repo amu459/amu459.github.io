@@ -26,7 +26,7 @@ namespace DeskAutomation.Helper_Classes
         public static List<XYZ> GetDeskPlacementPoint(List<XYZ> endPts, int offset)
         {
             List<XYZ> DeskPts = new List<XYZ>();
-            double deskWidth = 4;
+            double deskWidth = 3.937008;
             XYZ P = endPts[0];
             XYZ Q = endPts[1];
             int deskLimit = 5;
@@ -34,12 +34,12 @@ namespace DeskAutomation.Helper_Classes
             XYZ v = Q - P;
             XYZ vN = v.Normalize();
             //number of possible desk
-            int n = (int)Math.Floor((dist - 0.25) / deskWidth);
-            double remainder = (dist - 0.25) % deskWidth;
+            int n = (int)Math.Floor((dist - 0.164042) / deskWidth);
+            double remainder = (dist - 0.164042) % deskWidth;
 
             for (int i = 1; i <= n; i++)
             {
-                double d = (i - 1) * deskWidth + 2.125 + remainder* offset;
+                double d = (i - 1) * deskWidth + 2.05052 + remainder* offset;
                 XYZ tPoint = P + d * vN;
 
                 DeskPts.Add(tPoint);
@@ -67,19 +67,19 @@ namespace DeskAutomation.Helper_Classes
             {
 
                 List<XYZ> clearancePts = new List<XYZ>
-                { new XYZ(pt.X, pt.Y-4.75+0.00656168, pt.Z + 2),//keeping 2mm internal tolerance
-                new XYZ(pt.X+2-0.00656168, pt.Y-0.00656168, pt.Z + 2),
-                new XYZ(pt.X-2+0.00656168, pt.Y-0.00656168, pt.Z + 2),
-                new XYZ(pt.X-2+0.00656168, pt.Y-2, pt.Z + 2),
-                new XYZ(pt.X+2-0.00656168, pt.Y-2, pt.Z + 2),
+                { new XYZ(pt.X, pt.Y-4.7185+0.00656168, pt.Z + 2),//keeping 2mm internal tolerance
+                new XYZ(pt.X+1.9685-0.00656168, pt.Y-0.00656168, pt.Z + 2),
+                new XYZ(pt.X-1.9685+0.00656168, pt.Y-0.00656168, pt.Z + 2),
+                new XYZ(pt.X-1.9685+0.00656168, pt.Y-2, pt.Z + 2),
+                new XYZ(pt.X+1.9685-0.00656168, pt.Y-2, pt.Z + 2),
                 new XYZ(pt.X, pt.Y-2, pt.Z + 2),
                 new XYZ(pt.X, pt.Y-0.00656168, pt.Z + 2),
                 new XYZ(pt.X, pt.Y-1, pt.Z+2),
                 new XYZ(pt.X, pt.Y-3, pt.Z+2),
-                new XYZ(pt.X-2+0.00656168, pt.Y-3, pt.Z + 2),
-                new XYZ(pt.X+2-0.00656168, pt.Y-3, pt.Z + 2),
-                new XYZ(pt.X-2+0.00656168, pt.Y-4.75+0.00656168, pt.Z + 2),
-                new XYZ(pt.X+2-0.00656168, pt.Y-4.75+0.00656168, pt.Z + 2)};
+                new XYZ(pt.X-1.9685+0.00656168, pt.Y-3, pt.Z + 2),
+                new XYZ(pt.X+1.9685-0.00656168, pt.Y-3, pt.Z + 2),
+                new XYZ(pt.X-1.9685+0.00656168, pt.Y-4.7185+0.00656168, pt.Z + 2),
+                new XYZ(pt.X+1.9685-0.00656168, pt.Y-4.7185+0.00656168, pt.Z + 2)};
 
                 bool pointCheck = true;
                 Transform tFormNew = Transform.CreateRotationAtPoint(XYZ.BasisZ, angle, pt);
@@ -168,7 +168,7 @@ namespace DeskAutomation.Helper_Classes
             List<XYZ> rightEndPts = roomPD.RightEdge;
 
             List<XYZ> deskPts = new List<XYZ>();
-            double deskDepth = 4.75;
+            double deskDepth = 4.7185;
 
             double maxL = roomPD.RoomLength;
             double maxW = roomPD.RoomWidth;
