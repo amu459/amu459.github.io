@@ -35,29 +35,28 @@ namespace ToolsV2Classes
                 FamilySymbol lightCanSymbol = collector.OfClass(typeof(FamilySymbol))
                     .WhereElementIsElementType()
                     .Cast<FamilySymbol>()
-                    .Where(x => x.FamilyName.Contains("IN-Suspended Light-02"))
-                    .FirstOrDefault(x => x.Name.Contains("WWI-LT-LS-02-01")
-                    || x.Name.Contains("WWI-LT-LS02-01"));
+                    .Where(x => x.FamilyName.Contains("IN-Architecture Point-07"))
+                    .FirstOrDefault(x => x.Name.Contains("WWI-LT-AP-07-01"));
                 //Check whether lighting fixture family exists in Project, if not try to load from Google drive
                 if (lightCanSymbol == null)
                 {
                     TaskDialog.Show("Revit", "Standard Lighting fixture family is not loaded into the project."
                         + Environment.NewLine
-                        + "Tool will try to load the latest lighting fixture Family for cylindrical lights: IN-Suspended Light-02");
+                        + "Tool will try to load the latest lighting fixture Family for cylindrical lights: IN-Architecture Point-07");
                     //Loading family from G drive
                     using (Transaction tx = new Transaction(doc, "Load Light Fixture Family"))
                     {
                         tx.Start();
                         if (lightCanSymbol == null)
                         {
-                            string path = "G:\\Shared drives\\Dev-Deliverables\\Design Technology\\Revit Content\\Families\\Light Fixture\\IN-Suspended Light-02.rfa";
+                            string path = "G:\\Shared drives\\Dev-Deliverables\\Design Technology\\Revit Content\\Families\\Light Fixture\\IN-Architecture Point-07.rfa";
                             //Check familyLoadOption subClass in LoungeLights class
                             FamilyLoadOption newOption = new FamilyLoadOption();
                             doc.LoadFamily(path, newOption, out Family lightFamily);
                             if(lightFamily == null)
                             {
                                 //error in loading latest family
-                                TaskDialog.Show("Revit", "Light Family cannot be Loaded, please load the family 'IN-Suspended Light-02' manually :(");
+                                TaskDialog.Show("Revit", "Light Family cannot be Loaded, please load the family 'IN-Architecture Point-07' manually :(");
                             }
                             else
                             {
@@ -507,7 +506,9 @@ namespace ToolsV2Classes
 
         public bool OnSharedFamilyFound(Family sharedFamily, bool familyInUse, out FamilySource source, out bool overwriteParameterValues)
         {
-            throw new NotImplementedException();
+            source = FamilySource.Family;
+            overwriteParameterValues = true;
+            return true;
         }
     }
 
@@ -587,7 +588,13 @@ namespace ToolsV2Classes
 
         public static void ChangeOffsetToZero(FamilyInstance fi2)
         {
-            Parameter lightOffset = fi2.GetParameters("Offset").FirstOrDefault();
+            Parameter lightOffset = fi2.GetParameters("Elevation from Level").FirstOrDefault();
+
+
+            if (lightOffset == null)
+            {
+                lightOffset = fi2.GetParameters("Offset").FirstOrDefault();
+            }
             lightOffset.Set(0);
         }
 

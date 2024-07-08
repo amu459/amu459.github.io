@@ -33,26 +33,26 @@ namespace ToolsV2Classes
                 FamilySymbol light2400Symbol = collector.OfClass(typeof(FamilySymbol))
                     .WhereElementIsElementType()
                     .Cast<FamilySymbol>()
-                    .Where(x => x.FamilyName.Contains("IN-Suspended Light-03"))
-                    .FirstOrDefault(x => x.Name.Contains("WWI-LT-LS-03-03") || x.Name.Contains("WWI-LT-LS03-03"));
+                    .Where(x => x.FamilyName.Contains("IN-Architecture Linear-12"))
+                    .FirstOrDefault(x => x.Name.Contains("WWI-LT-AL-12-03"));
 
                 if (light2400Symbol == null)
                 {
                     TaskDialog.Show("Revit", "Standard Lighting fixture family is not loaded into the project."
                         + Environment.NewLine
-                        + "Tool will try to load the latest lighting fixture Family for linear lights: IN-Suspended Light-03");
+                        + "Tool will try to load the latest lighting fixture Family for linear lights: IN-Architecture Linear-12");
 
                     using (Transaction tx = new Transaction(doc, "Load Light Fixture Family"))
                     {
                         tx.Start();
                         if (light2400Symbol == null)
                         {
-                            string path = "G:\\Shared drives\\Dev-Deliverables\\Design Technology\\Revit Content\\Families\\Light Fixture\\IN-Suspended Light-03.rfa";
+                            string path = "G:\\Shared drives\\Dev-Deliverables\\Design Technology\\Revit Content\\Families\\Light Fixture\\IN-Architecture Linear-12.rfa";
                             FamilyLoadOption newOption = new FamilyLoadOption();
                             doc.LoadFamily(path, newOption, out Family lightFamily);
                             if (lightFamily == null)
                             {
-                                TaskDialog.Show("Revit", "Light Family cannot be Loaded, please load the family 'IN-Suspended Light-03' manually :(");
+                                TaskDialog.Show("Revit", "Light Family cannot be Loaded, please load the family 'IN-Architecture Linear-12' manually :(");
                             }
                             else
                             {
