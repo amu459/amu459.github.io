@@ -1,0 +1,73 @@
+﻿<Window x:Class="SMRevitTools.Classes.FloorFinish.FloorSelection"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SMRevitTools.Classes.EnlargedDrawing"
+             mc:Ignorable="d" 
+             d:Height="auto" d:DesignWidth="400" ResizeMode="NoResize"
+             SizeToContent="WidthAndHeight" Title="Input Space Drawing Details">
+
+    <Border Padding="15">
+
+        <StackPanel Width="350">
+
+
+
+            <Separator/>
+            <Label Content="Select the floor type to be modelled in the room" FontSize="12" Margin="0 0 0 5"
+                   HorizontalAlignment="Center"/>
+
+            <!-- To Input the Floor number -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="117*"/>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="26*"/>
+                    <ColumnDefinition Width="207*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Floor Type = " FontSize="12" HorizontalAlignment="Left" Width="80" Margin="37,-1,0,1" />
+                <ComboBox x:Name="exCombo" FontSize="10" 
+                          Margin="0,3,0,3" Grid.Column="2" SelectionChanged="exCombo_SelectionChanged" Grid.ColumnSpan="2"
+                          />
+
+            </Grid>
+
+            <!-- To Input the Casework Name -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Floor Offset = " FontSize="12" Margin="0 0 0 0" Grid.Column="0" HorizontalAlignment="Right" />
+                <TextBox x:Name="inputCaseworkText" Height="20" FontSize="10" Grid.Column="1" Margin="0,0,0,0" TextChanged="inputCaseworkText_TextChanged"/>
+            </Grid>
+
+
+            <Separator/>
+            <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                <!-- Pack B and Cancel Buttons -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Cancel" Width="100" Background="#7FF58575" Grid.Column="0" Click="CancelTask"/>
+
+                    <Button Content="Create Floor" Grid.Column="1" Click="GetPackBName" Grid.ColumnSpan="2" Margin="25,0,-100,0" Background="#7F7B955B"/>
+
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+
+
+
+    </Border>
+
+
+
+
+
+
+</Window>

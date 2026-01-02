@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name>ApplicationPlugin</Name>
+		<Assembly>SMRevitTools.dll</Assembly>
+		<AddInId>
+			D2FB4186-E7FE-4C27-8F12-16AA5A6C2761
+		</AddInId>
+		<FullClassName>SMRevitTools.ExternalApplication</FullClassName>
+		<VendorId>VDC</VendorId>
+		<VendorDescription>@VDC Team - Space Matrix</VendorDescription>
+	</AddIn>
+</RevitAddIns>
